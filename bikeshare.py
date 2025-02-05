@@ -22,11 +22,9 @@ def get_city():
 def get_time_period():
     """Prompt the user to specify a time filter and validate input."""
     while True:
-        # Ask the user to choose a time filter
-        time_period = input("\nWould you like to filter the data by 'month', 'day', or not at all? Type 'none' for no time filter.\n").strip().lower()
-        # Check if the input is valid
-        if time_period in ['month', 'day', 'none']:
-            return time_period
+        filter_period = input("\nWould you like to filter the data by 'month', 'day', or not at all? Type 'none' for no time filter.\n").strip().lower()
+        if filter_period in ['month', 'day', 'none']:
+            return filter_period
         print("Invalid input. Please enter 'month', 'day', or 'none'.")
 
 def get_month():
