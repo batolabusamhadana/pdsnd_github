@@ -24,24 +24,27 @@ def get_city():
 def get_time_period():
     """Prompt the user to specify a time filter and validate input."""
     while True:
-        # Ask the user to choose a time filter
-        time_period = input("\nWould you like to filter the data by 'month', 'day', or not at all? Type 'none' for no time filter.\n").strip().lower()
-        # Check if the input is valid
-        if time_period in ['month', 'day', 'none']:
-            return time_period
+        filter_period = input("\nWould you like to filter the data by 'month', 'day', or not at all? Type 'none' for no time filter.\n").strip().lower()
+        if filter_period in ['month', 'day', 'none']:
+            return filter_period
         print("Invalid input. Please enter 'month', 'day', or 'none'.")
 
 # Function to get the month the user wants the analysis for
 def get_month():
     """Prompt the user to select a month and validate input."""
-    months = ['january', 'february', 'march', 'april', 'may', 'june']
+    month_names = {
+        'january': 1,
+        'february': 2,
+        'march': 3,
+        'april': 4,
+        'may': 5,
+        'june': 6
+    }
     while True:
-        # Ask the user to choose a month
         month = input("\nWhich month? January, February, March, April, May, or June?\n").strip().lower()
-        # Check if the input is valid
-        if month in months:
-            return months.index(month) + 1
-        print("Invalid input. Please enter a valid month.")
+        if month in month_names:
+            return month_names[month]
+        print("Invalid input. Please enter a valid month."
 
 # Function to get the day the user wants the analysis for
 def get_day():
