@@ -1,13 +1,14 @@
 import pandas as pd
 import time
 
-# Filenames
+# Filenames for the different cities' data
 CITY_FILES = {
     'chicago': 'chicago.csv',
     'new york': 'new_york_city.csv',
     'washington': 'washington.csv'
 }
 
+# Function to get the city the user wants to analyze
 def get_city():
     """Prompt the user to select a city and validate input."""
     while True:
@@ -19,6 +20,7 @@ def get_city():
             return CITY_FILES[city]
         print("Invalid input. Please enter 'Chicago', 'New York', or 'Washington'.")
 
+# Function to get the time period the user wants to filter by (month, day, or none)
 def get_time_period():
     """Prompt the user to specify a time filter and validate input."""
     while True:
@@ -29,6 +31,7 @@ def get_time_period():
             return time_period
         print("Invalid input. Please enter 'month', 'day', or 'none'.")
 
+# Function to get the month the user wants the analysis for
 def get_month():
     """Prompt the user to select a month and validate input."""
     months = ['january', 'february', 'march', 'april', 'may', 'june']
@@ -40,6 +43,7 @@ def get_month():
             return months.index(month) + 1
         print("Invalid input. Please enter a valid month.")
 
+# Function to get the day the user wants the analysis for
 def get_day():
     """Prompt the user to select a day of the week and validate input."""
     while True:
