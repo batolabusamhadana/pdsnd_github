@@ -31,14 +31,19 @@ def get_time_period():
 
 def get_month():
     """Prompt the user to select a month and validate input."""
-    months = ['january', 'february', 'march', 'april', 'may', 'june']
+    month_names = {
+        'january': 1,
+        'february': 2,
+        'march': 3,
+        'april': 4,
+        'may': 5,
+        'june': 6
+    }
     while True:
-        # Ask the user to choose a month
         month = input("\nWhich month? January, February, March, April, May, or June?\n").strip().lower()
-        # Check if the input is valid
-        if month in months:
-            return months.index(month) + 1
-        print("Invalid input. Please enter a valid month.")
+        if month in month_names:
+            return month_names[month]
+        print("Invalid input. Please enter a valid month."
 
 def get_day():
     """Prompt the user to select a day of the week and validate input."""
